@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>IT202 Big Project</title>
+
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+      .screen {display: none;}
+      body {margin:0;}
+      main {margin-left:30px;}
+    </style>
+
+</head>
+
+ <body>
+
+  <header class="mdc-top-app-bar">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+      <span class="mdc-top-app-bar__title">CHICAGO CRIME</span>
+    </section>
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+    </section>
+  </div>
+</header>
+
+<aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <a class="mdc-list-item" href="#form" aria-current="page" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+          <span class="mdc-list-item__text">DATA FORM</span>
+        </a>
+        <a class="mdc-list-item" screen="map">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">map</i>
+          <span class="mdc-list-item__text">MAP</span>
+        </a>
+        <a class="mdc-list-item" href="#data">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">view_list</i>
+          <span class="mdc-list-item__text">VIEW DATA</span>
+        </a>
+        <a class="mdc-list-item" href="#chart">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">trending_up</i>
+          <span class="mdc-list-item__text">VIEW Charts</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="mdc-drawer-scrim"></div>
+
+  <main class="mdc-top-app-bar--fixed-adjust">
+  <div class=mdc-card__media--16-16>
+  <div class="mdc-card__primary-action">
+    <div class="mdc-card__media mdc-card__media--square">
+      <div class="mdc-card__media-content">Home Screen</div>
+    </div>
+    <div>
+      This app helps the user to track criminal activities that have happened in the state of illinois
+    </div>
+  </div>
+  <div class="mdc-card__actions">
+    <div class="mdc-card__action-buttons">
+  </div>
+  </div>
+</main>
+
+
+
+  <script>
+    const listEl = document.querySelector('.mdc-drawer .mdc-list');
+    // const mainContentEl = document.querySelector('main');
+
+    const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+
+    listEl.addEventListener('click', (event) => {
+      drawer.open = false;
+    });
+
+    document.querySelector("header button.mdc-top-app-bar__navigation-icon")
+    .addEventListener("click",(event)=>{
+      drawer.open = true;
+    })
+    // document.body.addEventListener('MDCDrawer:closed', () => {
+    //  mainContentEl.querySelector('input, button').focus();
+    // });
+  </script>
+
+</body>
+
+</html>
